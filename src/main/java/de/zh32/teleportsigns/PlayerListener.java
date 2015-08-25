@@ -113,8 +113,8 @@ class PlayerListener implements Listener {
         try {
             out.writeUTF("Connect");
             out.writeUTF(serverName);
-        } catch (IOException eee) {
-            Bukkit.getLogger().info("You'll never see me!");
+        } catch (IOException e) {
+            player.sendMessage(e.getMessage());
         }
         player.sendPluginMessage(plugin, "BungeeCord", b.toByteArray());
     }
